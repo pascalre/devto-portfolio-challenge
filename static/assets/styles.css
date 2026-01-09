@@ -508,6 +508,11 @@ header h1 {
   border-color: #2563eb;
 }
 
+.architecture-image {
+  max-width: 100%;
+  height: auto;
+}
+
 /* Footer */
 footer {
   background: #f0f0f0;
