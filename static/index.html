@@ -47,7 +47,7 @@
     </p>
     <img class="architecture-image" src="assets/architecture.svg" alt="Architecture">
     <p>
-      User queries are routed through <strong>Google Pub/Sub</strong> to a <strong>Go-based backend</strong> using <strong>Google Gemini</strong>. The system provides a real-time synchronous response while showcasing asynchronous event-driven flows (partially simulated for visualization) to illustrate how scalable enterprise architectures handle parallel tasks.
+      When a user submits a query, the Go-based backend performs a <strong>concurrent fan-out</strong>: it immediately calls the <strong>Google Gemini API</strong> to ensure a low-latency synchronous response for the user, while simultaneously publishing the event to <strong>Google Cloud Pub/Sub</strong>. This decoupling demonstrates how modern enterprise architectures trigger background processes - like analytics, logging, or secondary agent tasks - without blocking the critical path of the user experience.
     </p>
   </div>
 </section>
